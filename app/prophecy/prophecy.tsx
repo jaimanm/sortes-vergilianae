@@ -58,7 +58,7 @@ function getRandomNumber(min, max) {
 }
 
 export function Prophecy() {
-    const numLines = 3;
+    const numLines = 5;
     const [book, setBook] = useState(1);
     const [latinLine, setLatinLine] = useState([]);
     const [englishLine, setEnglishLine] = useState([]);
@@ -75,9 +75,8 @@ export function Prophecy() {
             .then(response => response.text())
             .then(data => {
                 const lines = data.split('\n');
-                const randomLineNumber = getRandomNumber(1, lines.length);
-                setLineNumber(randomLineNumber);
-                const line = lines.slice((randomLineNumber - 1) - numLines, (randomLineNumber - 1));
+                setLineNumber(getRandomNumber(1, lines.length));
+                const line = lines.slice((lineNumber - 1) - numLines, (lineNumber - 1));
                 setLatinLine(line);
             });
 
@@ -97,7 +96,7 @@ export function Prophecy() {
 
     return (
         <div className='flex-col justify-center text-2xl mx-16 h-auto w-auto'>
-            <p className='italic text-xl'>Aeneid Book {book}, Lines {lineNumber - 3}-{lineNumber}</p>
+            <p className='italic text-xl'>Aeneid Book {book}, Lines {lineNumber - numLines}-{lineNumber}</p>
             <br></br>
             <p>Latin:</p>
             <ul>
