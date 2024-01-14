@@ -27,7 +27,7 @@ export function Prophecy() {
                 const lines = data.split('\n');
                 setLineNumber(() => {
                     var randLine = getRandomNumber(1, lines.length);
-                    while (randLine - numLines <= 1) {
+                    while (randLine - numLines < 1) {
                         randLine = getRandomNumber(1, lines.length);
                     }
                     return randLine;
