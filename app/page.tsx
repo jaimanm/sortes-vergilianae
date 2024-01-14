@@ -12,6 +12,8 @@ export default function Page() {
       <h1 className="text-3xl font-bold underline">Hello, Welcome!</h1>
       <p className="text-2xl font-bold">This is the <i className="hover:text-[lightseagreen]">Sortes Vergilianae</i>, an ancient Roman window into your future...</p>
       <Button message="See Your Future!" />
+      <p className="text-xl selection:bg-transparent selection:text-[lightseagreen]">**best viewed on desktop</p>
+      <p className="text-xl selection:bg-transparent selection:text-[lightseagreen]">(use landscape mode if on mobile)</p>
       </div>
     </div>
   );
