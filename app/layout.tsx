@@ -2,6 +2,7 @@
 import type { Metadata } from "next"
 import { Links } from "./components/Links/links"
 import { HyperLink } from "./components/HyperLink/hyperlink"
+import { Analytics } from '@vercel/analytics/react'
 
 // These styles apply to every route in the application
 import './globals.css'
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className="font-mono bg-[#FAF9F6] selection:bg-[lightseagreen] selection:bg-opacity-50">
         <div className="h-screen w-screen text-slate-500">
         {children}
+        <Analytics />
         <Footer />
         </div>
         <Nav />
