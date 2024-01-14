@@ -58,7 +58,7 @@ function getRandomNumber(min, max) {
 }
 
 export function Prophecy() {
-    const numLines = 5;
+    const numLines = 3;
     const [book, setBook] = useState(1);
     const [latinLine, setLatinLine] = useState([]);
     const [englishLine, setEnglishLine] = useState([]);
