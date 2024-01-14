@@ -1,10 +1,10 @@
 // app/layout.tsx is UI common to all URLs, including '/'
 import type { Metadata } from "next"
 import { Links } from "./components/Links/links"
+import { HyperLink } from "./components/HyperLink/hyperlink"
 
 // These styles apply to every route in the application
 import './globals.css'
-import { HyperLink } from "./components/HyperLink/hyperlink"
 
 // it is required to have a layout.tsx at the top level of the app directory
 export const metadata: Metadata = {
