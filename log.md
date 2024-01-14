@@ -108,6 +108,10 @@ So going to sleep now, I'll start working on the random line search tomorrow.
 
 - Yeah so it's 12:46 am and I'm basically done with the website. It has a color theme of slate gray and lightseagreen, and it's pretty minimalistic. I'm happy with it, just wish I hadn't spent so much time on features that didn't make it to the end product.
 
+  - Ok so it's 1:05 am and I've fixed that thing where only the full path worked and I couldn't figure out the relative path.
+
+- 1:06am deploying to Vercel now
+
 ## Day 3
 
 -
