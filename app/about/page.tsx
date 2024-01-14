@@ -1,4 +1,5 @@
 // app/about/page.tsx is the UI for the '/about' URL
+import { HyperLink } from '../components/HyperLink/hyperlink';
 import './about.css'
 
 export default function Page() {
@@ -46,14 +47,16 @@ export default function Page() {
       <br></br>
       <h2 className="header">How was this website made?</h2>
       <p>
-        I learned React and Next.js to make this website. I used Python scripts to clean and format the Aeneid English and Latin texts,
+        I learned <HyperLink text="React" href="https://react.dev" /> and <HyperLink text="Next.js" href="https://nextjs.org" /> to make this website. I used Python scripts to clean and format the Aeneid English and Latin texts,
          and I used Tailwind CSS to style the website.
         <br></br><br></br>
-        note: There is a more detailed log of my work in "log.md" on the Github repo (which you can find by clicking my name in the bottom corner).
+        note: There is a more detailed log of my work in "log.md" on the <HyperLink text="Github repo" href="https://github.com/jaimanm/sortes-vergilianae/" />.
         <br></br><br></br>
         note2: I had a lot of fun playing around with the CSS, specifically making little things happen when you hover, select, or are pressing down on certain elements.
         <br></br><br></br>
         note3: I used a color scheme of "slate-500" and "lightseagreen" because why not
+        <br></br><br></br>
+        note4: There are four hyperlinks hidden in the text on this page, try to find them!
       </p>
     </div>
   );

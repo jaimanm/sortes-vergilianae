@@ -4,6 +4,7 @@ import { Links } from "./components/Links/links"
 
 // These styles apply to every route in the application
 import './globals.css'
+import { HyperLink } from "./components/HyperLink/hyperlink"
 
 // it is required to have a layout.tsx at the top level of the app directory
 export const metadata: Metadata = {
@@ -33,12 +34,10 @@ export default function RootLayout({
 
 function Footer() {
   return (
-    <a href="https://www.github.com/jaimanm">
-    <div className="fixed bottom-3 right-4 bg-[lightseagreen] w-auto h-auto bg-opacity-40 rounded-lg hover:text-[lightseagreen] hover:italic ">
+    <div className="fixed bottom-3 right-4 bg-[lightseagreen] w-auto h-auto bg-opacity-40 rounded-lg">
       <p className="p-3">
-        Made by Jaiman Munshi
+        <HyperLink text="Made by Jaiman Munshi" href="https://www.github.com/jaimanm" />
       </p>
     </div>
-    </a>
   );
 }
