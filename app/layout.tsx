@@ -33,10 +33,12 @@ export default function RootLayout({
 
 function Footer() {
   return (
-    <div className="fixed bottom-3 right-4 bg-[lightseagreen] w-auto h-auto bg-opacity-40 rounded-lg">
-      <p className="hover:text-[lightseagreen] hover:italic p-3">
-        Made by <a href="https://www.github.com/jaimanm">Jaiman Munshi</a>
+    <a href="https://www.github.com/jaimanm">
+    <div className="fixed bottom-3 right-4 bg-[lightseagreen] w-auto h-auto bg-opacity-40 rounded-lg hover:text-[lightseagreen] hover:italic ">
+      <p className="p-3">
+        Made by Jaiman Munshi
       </p>
     </div>
+    </a>
   );
 }
