@@ -1,10 +1,9 @@
 import { readFileSync } from 'fs';
 
-export function Prophecy() {
-    const book = getRandomNumber(1, 12)
-    // const bookLength = readFileSync('/Users/jaimanm/Desktop/VSCode_Workspace/sortes-vergilianae/lib/Aeneid_Latin/Aeneid_Latin_' + book + '.txt', 'utf-8').split('\n').length
+export function Prophecy({ book, lineNumber }) {
+    // const book = getRandomNumber(1, 12)
     const bookLength = readFileSync('public/Aeneid_Latin/Aeneid_Latin_' + book + '.txt', 'utf-8').split('\n').length
-    const lineNumber = getRandomNumber(1, bookLength)
+    // const lineNumber = getRandomNumber(1, bookLength)
     const numLines = 3
     const latinLine = getLatin(book, lineNumber, numLines)
     const englishLine = getEnglish(book, lineNumber, numLines)
@@ -30,10 +29,6 @@ export function Prophecy() {
     )
 }
 
-function getRandomNumber(min, max) {
-    // generates a random number between min and max, INCLUSIVE
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
 
 function getLatin(book, lineNumber, numLines) {
     // get a random Latin line from the Aeneid
