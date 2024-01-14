@@ -24,22 +24,36 @@ export default function Page() {
       <br></br>
       <h2 className="header">What does this website do?</h2>
       <p>
-        This website allows you to perform the Sortes Vergilianae without
+        This website allows you to perform the <i>Sortes Vergilianae</i> without
         needing to own a copy of Virgil's works. Simply click the button to get
         a random line from Vergil's <i>Aeneid</i>, translated for you! <br />
         <br />
+        Instead of a horoscope, let Virgil tell you your poetic prophecy from 2,050 years in the past.
+        <br /> <br />
         The fun part is, whatever line you get is up to{" "}
         <i>your own interpretation</i> as to what the prophecy means.
       </p>
       <br></br>
       <h2 className="header">What is the Aeneid?</h2>
       <p>
-        The Aeneid is an epic poem written by Virgil between 30 and 19 BC, that
-        tells the legendary story of Aeneas, a Trojan who travelled to Italy,
-        where he became the ancestor of the Romans. <br />
+        The Aeneid is an epic poem written by Virgil between 30 and 19 BC that
+        tells the legendary story of Aeneas, a Trojan refugee who travelled to Italy after the Trojan war,
+        destined to become the ancestor of the Romans. <br />
         <br />
         Because is an epic, your prophetic line may contain some exciting battle
         action! It's up to you whether that's a good or bad thing.
+      </p>
+      <br></br>
+      <h2 className="header">How was this website made?</h2>
+      <p>
+        I learned React and Next.js to make this website. I used Python scripts to clean and format the Aeneid English and Latin texts,
+         and I used Tailwind CSS to style the website.
+        <br></br><br></br>
+        note: There is a more detailed log of my work in "log.md" on the Github repo (which you can find by clicking my name in the bottom corner).
+        <br></br><br></br>
+        note2: I had a lot of fun playing around with the CSS, specifically making little things happen when you hover, select, or are pressing down on certain elements.
+        <br></br><br></br>
+        note3: I used a color scheme of "slate-500" and "lightseagreen" because why not
       </p>
     </div>
   );

@@ -111,10 +111,11 @@ So going to sleep now, I'll start working on the random line search tomorrow.
   - Ok so it's 1:05 am and I've fixed that thing where only the full path worked and I couldn't figure out the relative path.
 
 - 1:06am deploying to Vercel now
+- So at 2am I realized that the website was behaving differently than my local copy, so I gave up and went to sleep
 
 ## Day 3
 
--
+- Yeah I just spent about an hour trying to fix the Vercel issue and I actually did it! Now just making sure I have everything I want before writing up my submission.
 
 ## Day 4
 

@@ -63,12 +63,14 @@ export function Prophecy() {
     const [latinLine, setLatinLine] = useState([]);
     const [englishLine, setEnglishLine] = useState([]);
     const [lineNumber, setLineNumber] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setBook(getRandomNumber(1, 12));
     }, []);
 
     useEffect(() => {
+        setLoading(true);
         fetch('Aeneid_Latin/Aeneid_Latin_' + book + '.txt')
             .then(response => response.text())
             .then(data => {
@@ -85,11 +87,16 @@ export function Prophecy() {
                 const lines = data.split('\n');
                 const line = lines.slice((lineNumber - 1) - numLines, (lineNumber - 1));
                 setEnglishLine(line);
+                setLoading(false);
             });
     }, [book]);
 
+    if (loading) {
+        return <p className='mx-16 text-4xl font-bold italic'>Loading...</p>;
+    }
+
     return (
-        <div className='flex-col justify-center text-2xl mx-16'>
+        <div className='flex-col justify-center text-2xl mx-16 h-auto w-auto'>
             <p className='italic text-xl'>Aeneid Book {book}, Lines {lineNumber - 3}-{lineNumber}</p>
             <br></br>
             <p>Latin:</p>

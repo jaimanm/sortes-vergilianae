@@ -17,15 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="fixed font-mono bg-[#FAF9F6] selection:bg-[lightseagreen] selection:bg-opacity-50">
-        <nav className='fixed w-screen top-0 left-0 h-28 bg-slate-500 flex items-center select-none'>
-          <h1 className="font-bold font-mono text-3xl italic ml-5">Sortes Vergilianae</h1>
-          <Links />
-        </nav>
+      <body className="font-mono bg-[#FAF9F6] selection:bg-[lightseagreen] selection:bg-opacity-50">
         <div className="h-screen w-screen text-slate-500">
         {children}
         <Footer />
         </div>
+        <nav className='fixed w-screen top-0 left-0 h-28 bg-slate-500 flex items-center select-none'>
+          <h1 className="font-bold font-mono text-3xl italic ml-5">Sortes Vergilianae</h1>
+          <Links />
+        </nav>
       </body>
     </html>
   )
@@ -33,8 +33,8 @@ export default function RootLayout({
 
 function Footer() {
   return (
-    <div className="fixed bottom-6 left-6 m-6">
-      <p className="hover:text-[lightseagreen]">
+    <div className="fixed bottom-3 right-4 bg-[lightseagreen] w-auto h-auto bg-opacity-40 rounded-lg">
+      <p className="hover:text-[lightseagreen] hover:italic p-3">
         Made by <a href="https://www.github.com/jaimanm">Jaiman Munshi</a>
       </p>
     </div>
