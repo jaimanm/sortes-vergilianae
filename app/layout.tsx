@@ -24,8 +24,8 @@ export default function RootLayout({
         </nav>
         <div className="h-screen w-screen text-slate-500">
         {children}
-        </div>
         <Footer />
+        </div>
       </body>
     </html>
   )
@@ -34,11 +34,7 @@ export default function RootLayout({
 function Footer() {
   return (
     <div className="fixed bottom-6 left-6 m-6">
-      <br />
-      <h3>
-        <a href="/about">About the Sortes Vergilianae</a>
-      </h3>
-      <p>
+      <p className="hover:text-[lightseagreen]">
         Made by <a href="https://www.github.com/jaimanm">Jaiman Munshi</a>
       </p>
     </div>

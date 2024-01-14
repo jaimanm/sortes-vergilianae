@@ -3,12 +3,12 @@ import './about.css'
 
 export default function Page() {
   return (
-    <div className="flex-col m-20">
+    <div className="flex-col p-20 absolute top-24">
       <h2 className="header">What is <i>Sortes Vergilianae?</i></h2>
       <p>
         The{" "}
         <a href="https://en.wikipedia.org/wiki/Sortes_Vergilianae">
-          <i>Sortes Vergilianae</i>
+          <i className='hover:text-[lightseagreen]'>Sortes Vergilianae</i>
         </a>{" "}
         (Virgilian Lots) was a practice used by Ancient Romans (and others after
         Roman times such as in the Medieval era and during the Renaissance) to
