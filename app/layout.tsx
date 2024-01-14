@@ -23,12 +23,18 @@ export default function RootLayout({
         {children}
         <Footer />
         </div>
-        <nav className='fixed w-screen top-0 left-0 h-28 bg-slate-500 flex items-center select-none'>
-          <h1 className="font-bold font-mono text-3xl italic ml-5">Sortes Vergilianae</h1>
-          <Links />
-        </nav>
+        <Nav />
       </body>
     </html>
+  )
+}
+
+function Nav() {
+  return (
+    <nav className='fixed w-screen top-0 left-0 h-28 bg-slate-500 flex items-center select-none'>
+      <h1 className="font-bold font-mono text-3xl italic ml-5 hover:text-[lightseagreen]">Sortes Vergilianae</h1>
+      <Links />
+    </nav>
   )
 }
 
