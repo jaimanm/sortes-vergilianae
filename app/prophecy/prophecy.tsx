@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 
-
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -16,35 +15,32 @@ export function Prophecy() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setBook(getRandomNumber(1, 12));
+        const fetchLines = async () => {
+            setLoading(true);
+            const newBook = getRandomNumber(1, 12);
+            setBook(newBook);
+            const response = await fetch('Aeneid_Latin/Aeneid_Latin_' + newBook + '.txt');
+            const data = await response.text();
+            const lines = data.split('\n');
+            var randLine = getRandomNumber(1, lines.length);
+            while (randLine - numLines < 1) {
+                randLine = getRandomNumber(1, lines.length);
+            }
+            setLineNumber(randLine);
+            const lineIndex = randLine - 1;
+            const line = lines.slice(lineIndex - numLines, lineIndex);
+            setLatinLine(line);
+
+            const responseEnglish = await fetch('Aeneid_English/Aeneid_English_' + newBook + '.txt');
+            const dataEnglish = await responseEnglish.text();
+            const linesEnglish = dataEnglish.split('\n');
+            const lineEnglish = linesEnglish.slice(lineIndex - numLines, lineIndex);
+            setEnglishLine(lineEnglish);
+            setLoading(false);
+        }
+
+        fetchLines();
     }, []);
-
-    useEffect(() => {
-        setLoading(true);
-        fetch('Aeneid_Latin/Aeneid_Latin_' + book + '.txt')
-            .then(response => response.text())
-            .then(data => {
-                const lines = data.split('\n');
-                setLineNumber(() => {
-                    var randLine = getRandomNumber(1, lines.length);
-                    while (randLine - numLines < 1) {
-                        randLine = getRandomNumber(1, lines.length);
-                    }
-                    return randLine;
-                });
-                const line = lines.slice((lineNumber - 1) - numLines, (lineNumber - 1));
-                setLatinLine(line);
-            });
-
-        fetch('Aeneid_English/Aeneid_English_' + book + '.txt')
-            .then(response => response.text())
-            .then(data => {
-                const lines = data.split('\n');
-                const line = lines.slice((lineNumber - 1) - numLines, (lineNumber - 1));
-                setEnglishLine(line);
-                setLoading(false);
-            });
-    }, [book]);
 
     if (loading) {
         return <p className='mx-16 text-4xl font-bold italic'>Loading...</p>;
@@ -52,6 +48,7 @@ export function Prophecy() {
 
     return (
         <div className='flex-col justify-center text-2xl mx-16 h-auto w-auto'>
+            <p className='italic text-xl'>book: {book}, lineNumber: {lineNumber}, numLines: {numLines}</p>
             <p className='italic text-xl'>Aeneid Book {book}, Lines {lineNumber - numLines}-{lineNumber}</p>
             <br></br>
             <p>Latin:</p>
