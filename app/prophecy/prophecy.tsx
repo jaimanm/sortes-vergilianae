@@ -48,7 +48,6 @@ export function Prophecy() {
 
     return (
         <div className='flex-col justify-center text-2xl mx-16 h-auto w-auto'>
-            <p className='italic text-xl'>book: {book}, lineNumber: {lineNumber}, numLines: {numLines}</p>
             <p className='italic text-xl'>Aeneid Book {book}, Lines {lineNumber - numLines}-{lineNumber}</p>
             <br></br>
             <p>Latin:</p>
